@@ -82,8 +82,7 @@ gulp.task('fonts', function () {
 // Compile Stylesheets
 gulp.task('styles', function () {
   return gulp.src([
-      'app/styles/*.less',
-      'app/styles/**/*.css'
+      'app/styles/style.less'
     ])
     .pipe($.changed('styles', {extension: '.less'}))
     .pipe($.less()

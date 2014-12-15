@@ -9,5 +9,191 @@
 
 
 // --------------------------------------------------
+//   GENERIC OVERRIDES
+// --------------------------------------------------
+h4, h5, h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+ul, ol {
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+// --------------------------------------------------
 //   MAST
 // --------------------------------------------------
+
+// --------------------------------------------------
+//   HERO
+// --------------------------------------------------
+.hero {
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
+// --------------------------------------------------
+//   HERO DIVIDERS
+// --------------------------------------------------
+.hero-divider {
+  .holder {
+    height: 500px;
+  }
+}
+
+// --------------------------------------------------
+//   CONTENT DIVIDERS
+// --------------------------------------------------
+.content-divider {
+  ul {
+    padding-left: 0;
+  }
+  li {
+    list-style-type: none;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+}
+
+// --------------------------------------------------
+//   EXECUTIVE LETTERS
+// --------------------------------------------------
+.executive-letter {
+  ul {
+    .font(16px);
+  }
+  li {
+    .line-height(29.6px);
+  }
+}
+
+// --------------------------------------------------
+//   FUND AT A GLANCE
+// --------------------------------------------------
+.fund-glance {
+  p {
+    margin-top: 0;
+  }
+}
+
+.fund-info {
+  margin: 20px 0;
+  padding: 25px 0;
+  border: 1px solid #ddd;
+  border-width: 1px 0;
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+  }
+}
+
+.fund-grants {
+  margin: 50px 0;
+  padding: 0;
+  list-style-type: none;
+	counter-reset: li;
+  -moz-column-count: 2;
+  -moz-column-gap: 40px;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 40px;
+  column-count: 2;
+  column-gap: 40px;
+  > li {
+    margin-bottom: 20px;
+    padding-left: 60px;
+    min-height: 130px;
+    position: relative;
+    &:before {
+      content: counter(li); /* Use the counter as content */
+      counter-increment: li; /* Increment the counter by 1 */
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      .font(18px);
+      font-weight: bold;
+      line-height: 36px;
+      text-align: center;
+      color: @inverse;
+      background-color: @concrete;
+      border: 2px solid @asbestos;
+      border-radius: 50%;
+    }
+  }
+}
+
+// --------------------------------------------------
+//   DONORS
+// --------------------------------------------------
+.donors {
+  h3 {
+    margin-bottom: 50px;
+  }
+}
+
+// --------------------------------------------------
+//   COUNCIL & BOARD
+// --------------------------------------------------
+.council-board {
+  .list {
+    text-align: center;
+    ul {
+      padding: 0;
+      list-style-type: none;
+    }
+  }
+}
+
+// --------------------------------------------------
+//   LEADERSHIP & STAFF
+// --------------------------------------------------
+.leadership {
+  ul {
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+// --------------------------------------------------
+//   QUOTES
+// --------------------------------------------------
+.quotes {
+  .quote {
+    margin-bottom: 100px;
+  }
+}
+
+// --------------------------------------------------
+//   PARTNERS
+// --------------------------------------------------
+.partners {
+  .partner {
+
+  }
+}
+
+// --------------------------------------------------
+//   MISSION & VISION
+// --------------------------------------------------
+.mission-vision {
+  > * {
+    margin-top: 40px;
+  }
+  h6 {
+    .font(22px, @base);
+    font-family:@font-family-demo;
+    font-weight:500;
+    margin-bottom: 14px;
+    text-transform: none;
+  }
+}

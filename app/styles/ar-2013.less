@@ -89,36 +89,37 @@ li {
     opacity: 1;
   }
 }
- .hero-content {
-   padding: 20px 40px;
-   background: fade(@brand-maroon, 80%);
-   h2,
-   p,
-   a {
-     color: #fff;
-   }
-   h2 {
-     margin-bottom: 20px;
-     em {
-       font-weight: 300;
-       font-style: normal;
-     }
-     &:after {
-       content: '';
-       margin: 20px 0 0 0;
-       width: 80px;
-       display: block;
-       border-bottom: 9px solid #fff;
-     }
-   }
-   a {
-     font-weight: 600;
-     text-decoration: underline;
-   }
- }
+
+.hero-content {
+  padding: 20px 40px;
+  background: fade(@brand-maroon, 80%);
+  h2,
+  p,
+  a {
+    color: #fff;
+  }
+  h2 {
+    margin-bottom: 20px;
+    em {
+      font-weight: 300;
+      font-style: normal;
+    }
+    &:after {
+      content: '';
+      margin: 20px 0 0 0;
+      width: 80px;
+      display: block;
+      border-bottom: 9px solid #fff;
+    }
+  }
+  a {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+}
 
 // --------------------------------------------------
-//   HERO DIVIDERS
+//   HERO DIVIDERS & HERO BACKGROUNDS
 // --------------------------------------------------
 .hero-divider {
   .holder {
@@ -126,12 +127,34 @@ li {
   }
 }
 
+.hero-bg {
+  height: 500px;
+  background: 50% 50% no-repeat;
+  background-size: cover;
+  &.syria {
+    background-image: url(../images/bg-photo-syria.jpg);
+  }
+  &.haiyan {
+    background-image: url(../images/bg-photo-haiyan.jpg);
+  }
+  &.sandy {
+    background-image: url(../images/bg-photo-sandy.jpg);
+  }
+  &.wildfires {
+    background-image: url(../images/bg-photo-wildfires.jpg);
+  }
+  &.mission {
+    background-image: url(../images/bg-photo-mission.jpg);
+  }
+}
+
 // --------------------------------------------------
 //   CONTENT DIVIDERS
 // --------------------------------------------------
 .content-divider {
-  .lead {
-    font-weight: 600;
+  text-align: center;
+  h3 {
+    margin-bottom: 50px;
   }
   ul {
     padding-left: 0;
@@ -151,11 +174,14 @@ li {
     width: 300px;
     height: 300px;
     object-fit: cover;
-    border: 8px solid  #fff;
+    border: 8px solid #fff;
   }
   h2 {
     margin-bottom: 45px;
     line-height: 1;
+    small {
+      color: @brand-tan;
+    }
     &:after {
       content: '';
       margin: 20px 0 0 0;
@@ -176,8 +202,16 @@ li {
 //   FUND AT A GLANCE
 // --------------------------------------------------
 .fund-glance {
+  h2 {
+    small {
+      color: @brand-maroon;
+    }
+  }
   p {
     margin-top: 0;
+  }
+  .fund-photo {
+    border: 8px solid #fff;
   }
 }
 
@@ -189,6 +223,7 @@ li {
   h3 {
     font-size: 20px;
     text-transform: uppercase;
+    color: #555;
   }
 }
 
@@ -229,12 +264,25 @@ li {
 }
 
 // --------------------------------------------------
+//   FINANCES
+// --------------------------------------------------
+.finances {
+
+}
+
+// --------------------------------------------------
 //   DONORS
 // --------------------------------------------------
 .donors {
   h3 {
     margin-bottom: 50px;
     font-family: @headings-font-family;
+  }
+  li {
+    list-style-type: square;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
   }
 }
 
@@ -255,9 +303,22 @@ li {
 //   LEADERSHIP & STAFF
 // --------------------------------------------------
 .leadership {
+  .background {
+    background-image: url(../images/bg-photo-leadership.jpg);
+    opacity: 1;
+  }
+}
+
+.leadership-content {
+  padding: 20px 40px;
+  background: fade(@brand-blue, 90%);
+  h2 {
+    color: #fff;
+  }
   ul {
     padding: 0;
     list-style-type: none;
+    color: #fff;
   }
 }
 
@@ -266,7 +327,19 @@ li {
 // --------------------------------------------------
 .quotes {
   .quote {
-    margin-bottom: 100px;
+    .quote-text {
+      font-size: 24px;
+    }
+    .quote-author {
+      letter-spacing: 0;
+    }
+    .quote-author-name {
+      line-height: 1.5;
+      em {
+        font-style: normal;
+        text-transform: uppercase;
+      }
+    }
   }
 }
 
@@ -274,8 +347,14 @@ li {
 //   PARTNERS
 // --------------------------------------------------
 .partners {
+  .feature {
+  }
   .partner {
-
+    margin-top: 30px;
+    padding-top: 120px !important;
+    h6 {
+      font-size: 22px;
+    }
   }
 }
 
@@ -286,12 +365,21 @@ li {
   > * {
     margin-top: 40px;
   }
+  h2 {
+    color: @brand-maroon;
+  }
+  .lead {
+    margin-bottom: 50px;
+    text-align: left;
+  }
   h6 {
     .font(22px, @base);
     font-family: @headings-font-family;
     font-weight: 700;
     margin-bottom: 14px;
     text-transform: none;
+    color: @brand-tan;
+    border-bottom: 2px solid;
   }
 }
 

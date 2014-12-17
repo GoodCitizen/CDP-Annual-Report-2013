@@ -49,6 +49,10 @@ li {
   background-color: darken(@brand-blue, 20%);
 }
 
+.bg-brand-maroon {
+  background-color: @brand-maroon;
+}
+
 // --------------------------------------------------
 //   MAST
 // --------------------------------------------------
@@ -65,7 +69,8 @@ li {
       }
     }
     .nav > li > a {
-      font-size: 12px;
+      font-size: 13px;
+      font-weight: 800;
       letter-spacing: 0;
       color: #666;
       &:hover {
@@ -98,9 +103,16 @@ li {
        font-weight: 300;
        font-style: normal;
      }
+     &:after {
+       content: '';
+       margin: 20px 0 0 0;
+       width: 80px;
+       display: block;
+       border-bottom: 9px solid #fff;
+     }
    }
    a {
-     font-weight: 800;
+     font-weight: 600;
      text-decoration: underline;
    }
  }
@@ -119,14 +131,14 @@ li {
 // --------------------------------------------------
 .content-divider {
   .lead {
-    font-weight: 400;
+    font-weight: 600;
   }
   ul {
     padding-left: 0;
   }
   li {
     list-style-type: none;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.75;
   }
 }
@@ -135,9 +147,22 @@ li {
 //   EXECUTIVE LETTERS
 // --------------------------------------------------
 .executive-letter {
+  .executive-photo {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 8px solid  #fff;
+  }
   h2 {
     margin-bottom: 45px;
     line-height: 1;
+    &:after {
+      content: '';
+      margin: 20px 0 0 0;
+      width: 80px;
+      display: block;
+      border-bottom: 9px solid #555;
+    }
   }
   ul {
     .font(16px);
@@ -209,6 +234,7 @@ li {
 .donors {
   h3 {
     margin-bottom: 50px;
+    font-family: @headings-font-family;
   }
 }
 

@@ -43,7 +43,12 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
+  return gulp.src([
+      'app/scripts/**/*.js',
+      '!app/scripts/modernizr.custom.js',
+      '!app/scripts/jquery-1.10.2.min.js',
+      '!app/scripts/bootstrap.min.js'
+    ])
     .pipe(reload({stream: true, once: true}))
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
@@ -64,8 +69,11 @@ gulp.task('images', function () {
 // Copy All Files At The Root Level (app)
 gulp.task('copy', function () {
   return gulp.src([
-    'app/*',
-    '!app/*.html'
+    'app/**/*',
+    '!app/*.html',
+    // '!app/startup',
+    // '!app/startup/**/*',
+    '!app/styles/*.less'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'))
@@ -99,7 +107,10 @@ gulp.task('styles', function () {
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
-  return gulp.src('app/**/*.html')
+  return gulp.src([
+      'app/**/*.html',
+      '!app/startup/**/*.html'
+    ])
     .pipe(assets)
     // Concatenate And Minify JavaScript
     .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
@@ -120,7 +131,7 @@ gulp.task('html', function () {
     .pipe(assets.restore())
     .pipe($.useref())
     // Minify Any HTML
-    .pipe($.if('*.html', $.minifyHtml()))
+    // .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));

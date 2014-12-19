@@ -1,0 +1,58 @@
+/**
+ * Content 19 stylesheet
+ * */
+ .content-19 {
+    position:relative;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    border-bottom: 2px solid #ebedee;
+    .quote {
+        position: relative;
+        &:before {
+            content: '';
+            background: url("@{startup-basePath}common-files/icons/quote-up-mb@2x.png") no-repeat;
+            .background-size(31px 22px);
+            position: absolute;
+            width: 31px;
+            height: 22px;
+            top: 0;
+            left: -60px;
+            @media (min-width: 1200px) and (max-width: 1300px), (min-width: 992px) and (max-width: 1080px), (max-width: 870px) {
+                /* display: none; */
+            }
+        }
+        @media (max-width: 767px) {
+            margin-bottom: 50px;
+        }
+        .quote-text {
+            .font(37px, @text-color-heading);
+            font-weight: 300;
+            font-family: @font-family-demo;
+        }
+        .quote-author {
+            margin-top: 20px;
+            .font(13px, @concrete);
+            font-family: @font-family-demo;
+            letter-spacing: 2px;
+            text-transform: capitalize;
+            > * {
+                vertical-align: middle;
+            }
+        }
+        .quote-author-photo {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #ebedee;
+            .border-radius(2px);
+            overflow: hidden;
+            margin-right: 20px;
+        }
+        .quote-author-name {
+            display: inline-block;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 1.19em;
+        }
+    }
+}
